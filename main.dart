@@ -9,4 +9,5 @@ void main() {
   print('Age: ' + age.toString());
   bool isTrue = true;
   print('isTrue: ' + isTrue.toString());
+  print('Primitive variables -> String, int, double, bool');
 }
