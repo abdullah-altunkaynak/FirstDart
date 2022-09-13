@@ -78,4 +78,27 @@ void main() {
     year += 1;
     print(year);
   }
+  //Maps
+  var gifts = {
+    // Key:    Value
+    'first': 'partridge',
+    'second': 'turtledoves',
+    'fifth': 'golden rings'
+  };
+
+  var nobleGases = {
+    2: 'helium',
+    10: 'neon',
+    18: 'argon',
+  };
+  gifts['fourth'] = 'calling birds'; // Add a key-value pair
+  assert(gifts['first'] ==
+      'partridge'); // Retrieve a value from a map using the subscript operator ([])
+  gifts.remove('first');
+  print(gifts);
+  for (final key in gifts.keys) {
+    // gifts.value for value
+    print(key + ' : ' + gifts[key].toString());
+  }
+  print(gifts.containsKey('first'));
 }
