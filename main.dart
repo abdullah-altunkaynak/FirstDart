@@ -101,4 +101,15 @@ void main() {
     print(key + ' : ' + gifts[key].toString());
   }
   print(gifts.containsKey('first'));
+  //Functions
+  void sayMessage(String message, [String? messageOwner]) {
+    var result = '';
+    messageOwner != null
+        ? result = message + ', ' + messageOwner
+        : result = message + ', Owner Unknown';
+    print(result);
+  }
+
+  sayMessage('Hi, How are you?'); // Owner Unknown
+  sayMessage('Hi, I miss you', 'Your Darling'); // Owner is known
 }
