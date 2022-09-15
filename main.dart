@@ -112,4 +112,34 @@ void main() {
 
   sayMessage('Hi, How are you?'); // Owner Unknown
   sayMessage('Hi, I miss you', 'Your Darling'); // Owner is known
+  //OOP - Classes
+  var vector3d = Vector3d(5, 6, 7);
+  vector3d.Show();
+  vector3d.Shown();
+}
+
+//OOP - Classes
+class Vector2d {
+  final double x;
+  final double y;
+  //Constructor
+  Vector2d(this.x, this.y);
+  void Shown() {
+    print(this.x.toString() + '***' + this.y.toString());
+  }
+}
+
+class Vector3d extends Vector2d {
+  final double z;
+
+  // Forward the x and y parameters to the default super constructor like:
+  // Vector3d(final double x, final double y, this.z) : super(x, y);
+  Vector3d(super.x, super.y, this.z);
+  void Show() {
+    print(super.x.toString() +
+        '///' +
+        super.y.toString() +
+        '///' +
+        this.z.toString());
+  }
 }
