@@ -110,10 +110,12 @@ void main() {
   var vector3d = Vector3d(5, 6, 7);
   vector3d.Show();
   vector3d.Shown();
+  double sum = vector3d.VectorSum([vector3d.x, vector3d.y, vector3d.z]);
+  print('Sum vector\'s with Mixin Class, result = ' + sum.toString());
 }
 
 //OOP - Classes
-class Vector2d {
+class Vector2d with VectorMixin {
   final double x;
   final double y;
   //Constructor
@@ -135,5 +137,16 @@ class Vector3d extends Vector2d {
         super.y.toString() +
         '///' +
         this.z.toString());
+  }
+}
+
+// Mixin
+class VectorMixin {
+  double VectorSum(List x) {
+    double result = 0;
+    x.forEach((element) {
+      result += element;
+    });
+    return result;
   }
 }
